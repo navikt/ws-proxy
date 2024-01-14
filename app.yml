@@ -10,9 +10,14 @@ spec:
   port: 8080
   ingresses:
     - https://sts-proxy.intern.dev.nav.no
+    - https://ws-proxy.intern.dev.nav.no
     - https://sts-proxy.dev-fss-pub.nais.io
+    - https://ws-proxy.dev-fss-pub.nais.io
   strategy:
     type: Recreate
+  azure:
+    application:
+      enabled: true
   liveness:
     path: /
     initialDelay: 1
