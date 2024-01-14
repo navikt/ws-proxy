@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: sts-proxy
+  name: ws-proxy
   namespace: tbd
   labels:
     team: tbd
@@ -10,9 +10,7 @@ spec:
   port: 8080
   webproxy: true
   ingresses:
-    - https://sts-proxy.intern.dev.nav.no
     - https://ws-proxy.intern.dev.nav.no
-    - https://sts-proxy.dev-fss-pub.nais.io
     - https://ws-proxy.dev-fss-pub.nais.io
   strategy:
     type: Recreate
