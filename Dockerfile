@@ -25,7 +25,7 @@ RUN set -x \
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-openidc
 
 # for å tillate lua-script å få tak i spesifikke miljøvariabler
-RUN echo "env AZURE_APP_CLIENT_ID;" >> /usr/local/openresty/nginx/conf/nginx.conf
+RUN echo "env AZURE_APP_WELL_KNOWN_URL;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env WELL_KNOWN_URI;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env HTTP_PROXY;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env HTTPS_PROXY;" >> /usr/local/openresty/nginx/conf/nginx.conf

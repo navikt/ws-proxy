@@ -1,5 +1,5 @@
 local opts = {
-    discovery = os.getenv("WELL_KNOWN_URI"),
+    discovery = os.getenv("AZURE_APP_WELL_KNOWN_URL"),
     token_signing_alg_values_expected = { "RS256" },
     accept_none_alg = false,
     proxy_opts = {
