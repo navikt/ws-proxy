@@ -9,11 +9,18 @@ RUN set -x \
     && adduser -S -D -H -u $UID -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx || true \
 
 RUN set -x \
-# nginx user must own the cache and etc directory to write cache and tweak the nginx config
-    && chown -R $UID:0 /var/run/openresty \
-    && chmod -R g+w /var/run/openresty \
+# nginx user must own the cache and etc directory to write cache and tweak the nginx config \
+    && sed -i 's,#pid,pid,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,logs/nginx.pid;,/tmp/nginx.pid,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,/var/run/openresty/nginx-client-body,/tmp/client_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,/var/run/openresty/nginx-proxy,/tmp/proxy_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,/var/run/openresty/nginx-fastcgi,/tmp/fastcgi_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,/var/run/openresty/nginx-uwsgi,/tmp/uwsgi_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
+    && sed -i 's,/var/run/openresty/nginx-scgi,/tmp/scgi_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
     && chown -R $UID:0 /usr/local/openresty/nginx \
-    && chmod -R g+w /usr/local/openresty/nginx
+    && chmod -R g+w /usr/local/openresty/nginx \
+    && chown -R $UID:0 /etc/nginx \
+    && chmod -R g+w /etc/nginx
 
 RUN /usr/local/openresty/luajit/bin/luarocks install lua-resty-openidc
 
