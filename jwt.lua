@@ -1,7 +1,12 @@
 local opts = {
     discovery = os.getenv("WELL_KNOWN_URI"),
     token_signing_alg_values_expected = { "RS256" },
-    accept_none_alg = false
+    accept_none_alg = false,
+    proxy_opts = {
+        http_proxy  = os.getenv("HTTP_PROXY"),
+        https_proxy = os.getenv("HTTPS_PROXY"),
+        no_proxy = os.getenv("NO_PROXY")
+    }
 }
 
 local res, err = require("resty.openidc").bearer_jwt_verify(opts)
