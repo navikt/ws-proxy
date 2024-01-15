@@ -24,3 +24,6 @@ if res.aud ~= os.getenv("AZURE_APP_CLIENT_ID") then
     ngx.say("token has wrong aud ", res.aud)
     ngx.exit(ngx.HTTP_FORBIDDEN)
 end
+
+ngx.req.set_header("X-Azure-Client-Id", res.sub)
+ngx.req.set_header("X-Azure-Azp-Name", res.azp_name)
