@@ -31,6 +31,7 @@ RUN echo "env WELL_KNOWN_URI;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env HTTP_PROXY;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env HTTPS_PROXY;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env NO_PROXY;" >> /usr/local/openresty/nginx/conf/nginx.conf
+RUN echo "env GANDALF_BASE_URL;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env STS_BASE_URL;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env ARENA_BASE_URL;" >> /usr/local/openresty/nginx/conf/nginx.conf
 RUN echo "env CICS_BASE_URL;" >> /usr/local/openresty/nginx/conf/nginx.conf
