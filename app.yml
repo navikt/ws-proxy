@@ -19,6 +19,12 @@ spec:
       value: http://webproxy-nais.nav.no:8088
     - name: NO_PROXY
       value: localhost,127.0.0.1,.local,.adeo.no,.nav.no,.nais.io,.intern.dev.nav.no
+    - name: STS_BASE_URL
+      value: https://sts-q2.preprod.local
+    - name: ARENA_BASE_URL
+      value: https://arena-q2.adeo.no
+    - name: CICS_BASE_URL
+      value: https://cics-q2.adeo.no
   strategy:
     type: Recreate
   azure:
