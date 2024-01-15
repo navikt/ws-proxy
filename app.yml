@@ -8,10 +8,17 @@ metadata:
 spec:
   image: {{image}}
   port: 8080
-  webproxy: true
+  webproxy: false
   ingresses:
     - https://ws-proxy.intern.dev.nav.no
     - https://ws-proxy.dev-fss-pub.nais.io
+  env:
+    - name: HTTP_PROXY
+      value: http://webproxy-nais.nav.no:8088
+    - name: HTTPS_PROXY
+      value: http://webproxy-nais.nav.no:8088
+    - name: NO_PROXY
+      value: localhost,127.0.0.1,.local,.adeo.no,.nav.no,.nais.io,.intern.dev.nav.no
   strategy:
     type: Recreate
   azure:
