@@ -12,6 +12,13 @@ spec:
   ingresses:
     - https://ws-proxy.intern.dev.nav.no
     - https://ws-proxy.dev-fss-pub.nais.io
+  accessPolicy:
+    inbound:
+      rules:
+        - application: sparkel-arena
+          cluster: dev-fss
+        - application: spenn-simulering
+          cluster: dev-fss
   env:
     - name: HTTP_PROXY
       value: http://webproxy-nais.nav.no:8088
