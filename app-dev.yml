@@ -19,6 +19,8 @@ spec:
           cluster: dev-fss
         - application: spenn-simulering
           cluster: dev-fss
+        - application: sparkel-arena
+        - application: spenn-simulering
   env:
     - name: HTTP_PROXY
       value: http://webproxy-nais.nav.no:8088

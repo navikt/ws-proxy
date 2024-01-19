@@ -19,6 +19,8 @@ spec:
           cluster: prod-fss
         - application: spenn-simulering
           cluster: prod-fss
+        - application: sparkel-arena
+        - application: spenn-simulering
   env:
     - name: HTTP_PROXY
       value: http://webproxy-nais.nav.no:8088
