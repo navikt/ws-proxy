@@ -20,7 +20,9 @@ spec:
         - application: spenn-simulering
           cluster: dev-fss
         - application: sparkel-arena
+          cluster: dev-gcp
         - application: spenn-simulering
+          cluster: dev-gcp
   env:
     - name: HTTP_PROXY
       value: http://webproxy-nais.nav.no:8088
