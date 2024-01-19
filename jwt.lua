@@ -2,6 +2,7 @@ local opts = {
     discovery = os.getenv("AZURE_APP_WELL_KNOWN_URL"),
     token_signing_alg_values_expected = { "RS256" },
     accept_none_alg = false,
+    auth_accept_token_as_header_name = "Proxy-Authorization",
     proxy_opts = {
         http_proxy  = os.getenv("HTTP_PROXY"),
         https_proxy = os.getenv("HTTPS_PROXY"),
