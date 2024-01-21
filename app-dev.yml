@@ -37,7 +37,7 @@ spec:
     - name: ARENA_BASE_URL
       value: https://arena-q2.adeo.no
     - name: CICS_BASE_URL
-      value: https://cics-q2.adeo.no
+      value: https://cics-q1.adeo.no
   strategy:
     type: RollingUpdate
   azure:
