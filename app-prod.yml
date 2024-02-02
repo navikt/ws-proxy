@@ -16,10 +16,6 @@ spec:
     inbound:
       rules:
         - application: sparkel-arena
-          cluster: prod-fss
-        - application: spenn-simulering
-          cluster: prod-fss
-        - application: sparkel-arena
           cluster: prod-gcp
         - application: spenn-simulering
           cluster: prod-gcp
