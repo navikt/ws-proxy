@@ -19,6 +19,8 @@ spec:
           cluster: prod-gcp
         - application: spenn-simulering
           cluster: prod-gcp
+        - application: spenn-simulering-api
+          cluster: prod-gcp
   env:
     - name: HTTP_PROXY
       value: http://webproxy-nais.nav.no:8088
