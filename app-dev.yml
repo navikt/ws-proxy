@@ -17,8 +17,6 @@ spec:
       rules:
         - application: sparkel-arena
           cluster: dev-gcp
-        - application: spenn-simulering
-          cluster: dev-gcp
         - application: spenn-simulering-api
           cluster: dev-gcp
   env:
