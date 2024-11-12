@@ -1,15 +1,16 @@
-FROM openresty/openresty:1.25.3.2-0-alpine-fat
+# finn ny tag her: https://hub.docker.com/r/openresty/openresty/tags?
+FROM openresty/openresty:1.27.1.1-0-alpine-fat-aarch64
 
 ARG UID=101
 ARG GID=101
 
+# create nginx user/group first, to be consistent throughout docker variants
 RUN set -x \
-  # create nginx user/group first, to be consistent throughout docker variants
     && addgroup -g $GID -S nginx || true \
-    && adduser -S -D -H -u $UID -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx || true \
+    && adduser -S -D -H -u $UID -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx || true
 
+# nginx user must own the cache and etc directory to write cache and tweak the nginx config
 RUN set -x \
-# nginx user must own the cache and etc directory to write cache and tweak the nginx config \
     && sed -i 's,#pid,pid,' /usr/local/openresty/nginx/conf/nginx.conf \
     && sed -i 's,logs/nginx.pid,/tmp/nginx.pid,' /usr/local/openresty/nginx/conf/nginx.conf \
     && sed -i 's,/var/run/openresty/nginx-client-body,/tmp/client_temp,' /usr/local/openresty/nginx/conf/nginx.conf \
