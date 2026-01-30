@@ -1,5 +1,5 @@
 # finn ny tag her: https://hub.docker.com/r/openresty/openresty/tags?
-FROM openresty/openresty:1.27.1.2-8-alpine-fat
+FROM openresty/openresty:1.27.1.2-7-alpine-fat
 
 ARG UID=101
 ARG GID=101
