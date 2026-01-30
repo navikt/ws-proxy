@@ -41,3 +41,5 @@ COPY proxy.conf /etc/nginx/conf.d/default.conf
 COPY jwt.lua /usr/local/openresty/nginx/
 
 USER $UID
+
+ARG BYGD_PA_NY='2026-01-30T10:18:47'
