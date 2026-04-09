@@ -1,5 +1,5 @@
 # finn ny tag her: https://hub.docker.com/r/openresty/openresty/tags?
-FROM openresty/openresty:1.27.1.2-5-alpine-fat
+FROM openresty/openresty:1.29.2.3-1-alpine-fat
 
 ARG UID=101
 ARG GID=101
@@ -42,4 +42,4 @@ COPY jwt.lua /usr/local/openresty/nginx/
 
 USER $UID
 
-ARG BYGD_PA_NY='2026-01-30T10:18:47'
+ARG BYGD_PA_NY='2026-04-09T09:01:00'
