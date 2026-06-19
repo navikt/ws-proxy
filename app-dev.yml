@@ -15,8 +15,6 @@ spec:
   accessPolicy:
     inbound:
       rules:
-        - application: sparkel-arena
-          cluster: dev-gcp
         - application: spenn-simulering-api
           cluster: dev-gcp
   env:
@@ -30,8 +28,6 @@ spec:
       value: https://security-token-service.nais.preprod.local
     - name: STS_BASE_URL
       value: https://sts-q2.preprod.local
-    - name: ARENA_BASE_URL
-      value: https://arena-q2.adeo.no
     - name: CICS_BASE_URL
       value: https://cics-q2.adeo.no
   strategy:
